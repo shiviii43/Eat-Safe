@@ -1,0 +1,5 @@
+Eat Safe is a full-stack web application designed to help users make informed and safer dietary choices by providing detailed insights into food items, including ingredients, nutritional values, and potential health risks.
+
+The frontend is built using React.js, delivering a responsive and dynamic user interface, with Tailwind CSS used for efficient and modern styling. The backend is developed using Spring Boot, exposing RESTful APIs for handling business logic, data processing, and communication with the client side. API documentation and testing are facilitated through OpenAPI (Swagger), ensuring clarity and ease of integration.
+
+The application follows a modular architecture, separating frontend and backend concerns, and is designed to be scalable and maintainable. It aims to promote food safety awareness while leveraging modern web technologies to deliver a seamless user experience.
