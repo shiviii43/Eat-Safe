@@ -10,7 +10,7 @@ function Footer(){
         <div className="bg-gray-900 flex justify-between ">            
             <Link className="flex" to="/">
                 <img  className="h-10 m-5 mr-3 rounded-3xl" src={Logo} alt="Logo"/>
-                <h1 className=" text-amber-50 my-7 text-xl">Eat Safe</h1>
+                <h1 className=" text-amber-50 my-7 text-xl">Eat <span className="text-green-500 text-xl">Safe</span></h1>
             </Link>
             <div className="flex my-7 mx-10">
                 <a href="https://www.instagram.com/shivanshharbola_/" target='_blank'><img className="h-5 ml-3" src={Instagram}/></a>

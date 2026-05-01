@@ -4,11 +4,13 @@ import { Outlet } from "react-router-dom";
 
 function Layout(){
     return(
-        <>
+        <div className=" flex flex-col min-h-screen overflow-x-hidden">
             <Header/>
-            <Outlet/>
+            <main className="flex-1 min-w-0">
+                <Outlet/>
+            </main>
             <Footer/>
-        </>
+        </div>
     )
 }
 
