@@ -6,7 +6,7 @@ function Header(){
         <div className="flex justify-between">
             <div className="h-10">
                 <Link to="/">
-                    <img className="h-18 ml-5 mt-2"src={Logo} alt="EatSafe"/>
+                    <img className="h-15 ml-5 m-1 "src={Logo} alt="EatSafe"/>
                 </Link>
             </div>
             <div className="mx-10 my-5">

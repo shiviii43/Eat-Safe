@@ -6,6 +6,7 @@ import Home from './Home'
 import About from './About'
 import Guide from './Guide'
 import Contact from './Contact'
+import Result from './Result'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/about" element={<About/>}></Route>
           <Route path="/guide" element={<Guide/>}></Route>
           <Route path="/contact" element={<Contact/>}></Route>
+          <Route path="/result" element={<Result/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 function Footer(){
     return(
-        <div className="bg-gray-900 flex justify-between ">            
+        <div className="bg-gray-900 flex justify-between mt-3">            
             <Link className="flex" to="/">
                 <img  className="h-10 m-5 mr-3 rounded-3xl" src={Logo} alt="Logo"/>
                 <h1 className=" text-amber-50 my-7 text-xl">Eat <span className="text-green-500 text-xl">Safe</span></h1>
