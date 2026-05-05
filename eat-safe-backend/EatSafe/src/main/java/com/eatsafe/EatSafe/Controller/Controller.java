@@ -16,7 +16,7 @@ public class Controller {
     private Service serviceObj;
 
     @PostMapping("/analyze")
-    private String analyzeTheData(@RequestBody Model foodData){
+    private Object analyzeTheData(@RequestBody Model foodData){
         return serviceObj.analyzeFood(foodData);
     }
 }
