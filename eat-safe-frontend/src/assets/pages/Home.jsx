@@ -1,48 +1,22 @@
 import Background from '../images/background.png'
 import PageTitle from '../components/PageTitle'
-import Card1 from '../components/Card1'
 import Card2 from '../components/Card2'
-import AIbrain from '../images/AIbrain.png'
-import Shield from '../images/shield.png'
 import ShieldLeaf from '../images/shieldLeaf.png'
 import OpenAI from '../images/OpenAI_Logo.png'
-import GrowthChart from '../images/growthChart.png'
-import Leaf from '../images/leaf.png'
 import Tick from '../images/Tick.png'
 import Heart from '../images/Heart.png'
 import Keyboard from '../images/Keyboard.png'
 import AIChip from '../images/AIchip.png'
 import Magnifier from '../images/Magnifier.png'
 import Notebook from '../images/Notebook.png'
-import { faWandMagicSparkles, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faWandMagicSparkles} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Home() {
   const title = "Know What's Safe For YOU";
   const paragraph = "Enter any processed food product and your health conditions. We'll analyse the ingredients using AI and tell you what's safe for you."
   
-  const cards1 = [
-    {
-      image:AIbrain,
-      title:"AI Ingredient Extraction",
-      description:"We find the ingredients of the processed food using OpenAI."
-    },
-    {
-      image:Shield,
-      title:"Allery and Disease Detection",
-      description:"We check ingredients against your health conditions."
-    },
-    {
-      image:GrowthChart,
-      title:"Smart Risk Analysis",
-      description:"We analyse risk, additives, and nutritional impact."
-    },
-    {
-      image:Leaf,
-      title:"Healthier Recommendations",
-      description:"We suggest better and safer alternatives for you. "
-    }
-  ]
+
   const cards2 = [
     {
       image:Keyboard,
@@ -66,29 +40,25 @@ function Home() {
     }
   ]
 
-
   return (
     <div>
-      <div className="w-full min-h-115 py-10 bg-contain bg-no-repeat" style={{ backgroundImage: `url(${Background})`}}>
+      <div className="w-full min-h-1/2 pb-37 pt-10 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${Background})`}}>
         <PageTitle title={title} paragraph ={paragraph}/>
 
-        <div className="bg-white rounded-2xl h-auto w-100 mx-12 p-2 shadow-md hover:shadow-green-700 hover:shadow-md hover:scale-101">
-          <input className="w-full border border-gray-300 rounded-lg px-3 my-1 text-xs py-1" placeholder="Enter Product name (e.g. Maggie, Oreo, Protien Bar)"></input>
-          <p className="text-xs font-semibold pl-1">Add any disease or allergy(optional)</p>
-          <input className="w-full border border-gray-300 rounded-lg px-3 py-1 mt-1 mb-2 text-xs "></input>        
-          <button className=" bg-green-600 rounded-xl text-white py-1 px-5 w-full text-sm hover:scale-102 " ><FontAwesomeIcon className="mr-1" icon={faWandMagicSparkles}/>Analyze Food</button>
+        <div className="bg-white rounded-2xl h-auto w-100 mx-20 p-3 shadow-md hover:shadow-green-700 hover:shadow-md hover:scale-101">
+          <p className="text-base font-semibold pl-1" >Enter the Product's name</p>
+          <input className="w-full border border-gray-300 rounded-lg px-3 my-2 text-base py-1" placeholder="(e.g. Maggie, Oreo)"></input>
+          <p className="text-base font-semibold pl-1">Add any disease or allergy(optional)</p>
+          <input className="w-full border border-gray-300 rounded-lg px-3 py-1 mt-1 mb-2 text-base "></input>        
+          <button className=" bg-green-600 rounded-xl text-white py-1 px-5 w-full text-base hover:scale-102 " ><FontAwesomeIcon className="mr-2" icon={faWandMagicSparkles}/>Analyze Food</button>
         </div>
 
       </div>
 
       <div className="flex justify-center">
-      {cards1.map((card,index) => (
-        <Card1 key={index} {...card}/>
-      ))}
-      </div>
-
-      <div>
-        <span className="flex justify-center m-2" >How it Works</span>
+        <div className="h-px w-1/3 bg-black/50 my-auto mx-5"></div>
+        <span className="flex justify-center m-2" >Working</span>
+        <div className="h-px w-1/3 bg-black my-auto mx-5"></div>
       </div>
 
       <div className="flex justify-center">

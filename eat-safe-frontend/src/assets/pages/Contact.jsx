@@ -1,8 +1,8 @@
-import React from 'react'
+import BG from '../images/BG2.png' 
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div className="min-h-screen bg-center bg-cover" style={{backgroundImage:`url(${BG})`}}></div>
   )
 }
 
