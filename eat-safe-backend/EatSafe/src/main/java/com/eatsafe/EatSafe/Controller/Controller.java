@@ -1,6 +1,6 @@
 package com.eatsafe.EatSafe.Controller;
 
-import com.eatsafe.EatSafe.DTO.Model;
+import com.eatsafe.EatSafe.DTO.FoodDTO;
 import com.eatsafe.EatSafe.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,8 +15,8 @@ public class Controller {
     @Autowired
     private Service serviceObj;
 
-    @PostMapping("/analyze")
-    private Object analyzeTheData(@RequestBody Model foodData){
+    @PostMapping("/v1/examine-product")
+    private Object analyzeTheData(@RequestBody FoodDTO foodData){
         return serviceObj.analyzeFood(foodData);
     }
 }

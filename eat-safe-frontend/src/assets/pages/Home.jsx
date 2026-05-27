@@ -11,12 +11,13 @@ import Magnifier from '../images/Magnifier.png'
 import Notebook from '../images/Notebook.png'
 import { faWandMagicSparkles} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
+import API from "../api/axiosInstance"
 
 function Home() {
   const title = "Know What's Safe For YOU";
   const paragraph = "Enter any processed food product and your health conditions. We'll analyse the ingredients using AI and tell you what's safe for you."
   
-
   const cards2 = [
     {
       image:Keyboard,
@@ -40,17 +41,45 @@ function Home() {
     }
   ]
 
+  const [productName,setProductName] = useState("")
+  const [diseaseName,setDiseaseName] = useState("")
+
+  const handleSubmit = async () => {
+    try{
+      const response = await API.post(
+          "/v1/examine-product",{
+            productName: productName,
+            diseaseName : [diseaseName]
+          }
+      )
+      console.log(response.data)
+    }catch(e){
+      console.log("Axios Error:",e)
+    }
+      
+  }
+
   return (
-    <div>
+    <div className="mb-2">
       <div className="w-full min-h-1/2 pb-37 pt-10 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${Background})`}}>
         <PageTitle title={title} paragraph ={paragraph}/>
 
         <div className="bg-white rounded-2xl h-auto w-100 mx-20 p-3 shadow-md hover:shadow-green-700 hover:shadow-md hover:scale-101">
           <p className="text-base font-semibold pl-1" >Enter the Product's name</p>
-          <input className="w-full border border-gray-300 rounded-lg px-3 my-2 text-base py-1" placeholder="(e.g. Maggie, Oreo)"></input>
+          <input className="w-full border border-gray-300 rounded-lg px-3 my-2 text-base py-1" 
+            type='text' 
+            placeholder="E.g. Maggie, Oreo"
+            value={productName}
+            onChange={(e) => setProductName(e.target.value)}
+            />
           <p className="text-base font-semibold pl-1">Add any disease or allergy(optional)</p>
-          <input className="w-full border border-gray-300 rounded-lg px-3 py-1 mt-1 mb-2 text-base "></input>        
-          <button className=" bg-green-600 rounded-xl text-white py-1 px-5 w-full text-base hover:scale-102 " ><FontAwesomeIcon className="mr-2" icon={faWandMagicSparkles}/>Analyze Food</button>
+          <input className="w-full border border-gray-300 rounded-lg px-3 py-1 mt-1 mb-2 text-base " 
+          type='text'
+          placeholder="E.g. Lactose Intolerance"
+          value={diseaseName}
+          onChange={(e) => setDiseaseName(e.target.value)}
+          />      
+          <button className=" bg-green-600 rounded-xl text-white py-1 px-5 w-full text-base hover:scale-102 " onClick={handleSubmit}><FontAwesomeIcon className="mr-2" icon={faWandMagicSparkles}/>Analyze Food</button>
         </div>
 
       </div>

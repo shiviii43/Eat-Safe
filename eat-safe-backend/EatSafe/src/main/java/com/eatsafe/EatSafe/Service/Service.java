@@ -1,6 +1,6 @@
 package com.eatsafe.EatSafe.Service;
 
-import com.eatsafe.EatSafe.DTO.Model;
+import com.eatsafe.EatSafe.DTO.FoodDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -22,7 +22,7 @@ public class Service {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    public Object analyzeFood(Model foodData){
+    public Object analyzeFood(FoodDTO foodData){
         try{
             String prompt = """
                     You are a food safety assistant .
@@ -37,8 +37,8 @@ public class Service {
                       "reason" : "Short Explanation"
                     }                    \s
                    \s""".formatted(
-                            foodData.getProduct_name(),
-                            foodData.getDiseases_allergies()
+                            foodData.getProductName(),
+                            foodData.getDiseaseName()
                     );
 
             String url = "https://api.openai.com/v1/chat/completions";
