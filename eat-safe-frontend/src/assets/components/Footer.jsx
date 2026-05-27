@@ -1,4 +1,4 @@
-import Logo from '../images/Favicon.png'
+import Logo from '../images/favicon.png'
 import Instagram from '../images/insta.png'
 import Gmail from '../images/gmail.png'
 import Github from '../images/github.png'
