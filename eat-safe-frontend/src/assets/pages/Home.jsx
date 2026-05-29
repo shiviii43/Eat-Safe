@@ -43,6 +43,7 @@ function Home() {
 
   const [productName,setProductName] = useState("")
   const [diseaseName,setDiseaseName] = useState("")
+  const [countryName,setCountryName] = useState("")
 
   const handleSubmit = async () => {
     try{
@@ -71,14 +72,24 @@ function Home() {
             placeholder="E.g. Maggie, Oreo"
             value={productName}
             onChange={(e) => setProductName(e.target.value)}
+            required
             />
+          <p className="text-base font-semibold pl-1" >Enter your country's name</p>
+          <input className="w-full border border-gray-300 rounded-lg px-3 my-2 text-base py-1" 
+            type='text' 
+            placeholder="E.g. Maggie, Oreo"
+            value={productName}
+            onChange={(e) => setProductName(e.target.value)}
+            required
+          />
           <p className="text-base font-semibold pl-1">Add any disease or allergy(optional)</p>
           <input className="w-full border border-gray-300 rounded-lg px-3 py-1 mt-1 mb-2 text-base " 
           type='text'
           placeholder="E.g. Lactose Intolerance"
           value={diseaseName}
           onChange={(e) => setDiseaseName(e.target.value)}
-          />      
+          />
+          
           <button className=" bg-green-600 rounded-xl text-white py-1 px-5 w-full text-base hover:scale-102 " onClick={handleSubmit}><FontAwesomeIcon className="mr-2" icon={faWandMagicSparkles}/>Analyze Food</button>
         </div>
 
